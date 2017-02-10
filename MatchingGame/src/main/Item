@@ -1,0 +1,21 @@
+package main;
+
+public class Item {
+   
+   //image
+   
+   String name;
+   
+   
+   
+   //get name
+   //get image
+   
+   
+   
+   
+   
+   
+   
+   
+}
