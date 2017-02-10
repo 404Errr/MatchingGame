@@ -3,7 +3,6 @@ package main;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 
-
 public class Main {
 	static int SCREEN_HEIGHT, SCREEN_WIDTH, WINDOW_HEIGHT, WINDOW_WIDTH, UI_HEIGHT, UI_WIDTH;
 	
