@@ -10,7 +10,12 @@ import javax.imageio.ImageIO;
 import main.Item;
 
 public class Data {
-	static final String picturePath = "src/data/pictures/", pictureExt = ".png";
+	private static final String picturePath = "src/data/pictures/", pictureExt = ".png";
+
+	public static final int IMAGE_SIZE = 400;
+
+
+
 
 	public static ArrayList<Item> getItems() {
 		ArrayList<Item> items = new ArrayList<>();
@@ -35,8 +40,6 @@ public class Data {
 			System.out.println("Issue with loading images.");
 			System.exit(0);
 		}
-
-
 		return items;
 	}
 }

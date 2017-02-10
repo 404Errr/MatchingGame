@@ -2,6 +2,7 @@ package main;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
@@ -19,6 +20,7 @@ public class Renderer extends JPanel {
 	}
 
 	private void drawCurrentImage(Graphics2D g2) {
-		g.drawImage(Data.getItems().get(2).picture, 10, 10, 400, 400, null);
+		BufferedImage image = Data.getItems().get(2).picture;
+		g.drawImage(image, 10, 10, Data.IMAGE_SIZE*(image.getWidth()/image.getHeight()), Data.IMAGE_SIZE, null);
 	}
 }
