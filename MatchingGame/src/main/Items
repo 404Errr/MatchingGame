@@ -2,9 +2,11 @@ package main;
 
 public class Items {
     
+    private ArrayList<Item> items = new ArrayList<>();
     
+    //get items
     
-    
+    //get random item
     
     
     
