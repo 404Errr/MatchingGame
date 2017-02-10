@@ -5,6 +5,7 @@ import java.awt.geom.Rectangle2D;
 
 import javax.swing.JFrame;
 
+@SuppressWarnings("serial")
 public class Window extends JFrame {
 	private static JFrame frame;
 	private static UserInput input;

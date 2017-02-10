@@ -5,7 +5,7 @@ import java.awt.GraphicsEnvironment;
 
 public class Main {
 	static int SCREEN_HEIGHT, SCREEN_WIDTH, WINDOW_HEIGHT, WINDOW_WIDTH, UI_HEIGHT, UI_WIDTH;
-	
+
 	static {
 		GraphicsDevice screen = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 		int width = screen.getDisplayMode().getWidth(), height = screen.getDisplayMode().getHeight();
@@ -24,7 +24,7 @@ public class Main {
 	public static void main(String[] args) {
 		updateLoop = new UpdateLoop();
 		Window.init();
-		Thread update = new Thread(updateLoop, "TD Update");
+		Thread update = new Thread(updateLoop, "Loop");
 		update.start();
 	}
 }
