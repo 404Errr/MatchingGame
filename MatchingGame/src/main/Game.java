@@ -14,6 +14,7 @@ public class Game {
 	}
 
 	public static void newSet() {
+		itemList.resetList();
 		currentItemSet = new ItemSet(itemList);
 	}
 

@@ -8,11 +8,7 @@ public class ItemList {
 	private ArrayList<Item> items = new ArrayList<>(), itemOptions = new ArrayList<>();
 
 	public ItemList(ArrayList<Item> items) {
-		for (Item item:items) {
-			this.items.add(item);
-			this.itemOptions.add(item);
-		}
-		Collections.shuffle(this.items);
+		resetList();
 		System.out.println("New item list: "+this.items);
 	}
 
@@ -24,11 +20,16 @@ public class ItemList {
 		return itemOptions.remove(0);
 	}
 
-	public void resetOptions() {
+	public void resetList() {
+		items.clear();
 		itemOptions.clear();
-		for (Item item:items) {
-			itemOptions.add(item);
+		for (Item item:Items.getItems()) {
+			this.items.add(item);
+			this.itemOptions.add(item);
 		}
+		int seed = new Random().nextInt();
+		Collections.shuffle(this.items, new Random(seed));
+		Collections.shuffle(this.itemOptions, new Random(seed));
 	}
 
 	public Item getRandomItem() {//returns a random item from items

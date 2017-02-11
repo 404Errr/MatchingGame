@@ -1,5 +1,7 @@
 package main;
 
+import user.input.Buttons;
+
 public class UpdateLoop implements Runnable {
 
 	@Override
@@ -25,7 +27,9 @@ public class UpdateLoop implements Runnable {
 
 	private void update() {
 		try {
-
+			for (int i = 0;i<Buttons.getButtons().size();i++) {
+				Buttons.getButtons().get(i).tick();
+			}
 		}
 		catch (Exception e) {
 			System.out.println("-UPDATE ERROR");
