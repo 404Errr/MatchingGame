@@ -13,9 +13,11 @@ public class ItemSet {
 		for (int i = 0;i<Data.CHOICE_COUNT-1;i++) {
 			itemChoices.add(itemList.getRandomItem());
 		}
+		activeItem = itemChoices.get(0);
+		System.out.println("New Set: |"+activeItem+"| "+itemChoices);
 	}
 
-	public ArrayList<Item> getItemChoices() {
+	public ArrayList<Item> getChoices() {
 		return itemChoices;
 	}
 

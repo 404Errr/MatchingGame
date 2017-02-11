@@ -1,21 +1,19 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class ItemList {
 	private ArrayList<Item> items = new ArrayList<>();
 
 	public ItemList(ArrayList<Item> items) {
-		System.out.println("New item list");
+
 		for (Item item:items) {
 			this.items.add(item);
 		}
-		scrambleItems();
-	}
-
-	public void scrambleItems() {//TODO
-		//scrambles items
+		Collections.shuffle(this.items);
+		System.out.println("New item list: "+this.items);
 	}
 
 	public ArrayList<Item> getItems() {
