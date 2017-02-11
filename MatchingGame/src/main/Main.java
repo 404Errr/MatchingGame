@@ -32,14 +32,6 @@ public class Main {
 		update.start();
 	}
 
-	public static int getSCREEN_HEIGHT() {
-		return SCREEN_HEIGHT;
-	}
-
-	public static int getSCREEN_WIDTH() {
-		return SCREEN_WIDTH;
-	}
-
 	public static int getWINDOW_HEIGHT() {
 		return WINDOW_HEIGHT;
 	}

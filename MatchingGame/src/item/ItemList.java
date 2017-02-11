@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class ItemList {
+import data.Data;
+
+public class ItemList implements Data {
 	private ArrayList<Item> items = new ArrayList<>(), itemOptions = new ArrayList<>();
 
 	public ItemList(ArrayList<Item> items) {
@@ -17,16 +19,34 @@ public class ItemList {
 	}
 
 	public Item getNextItem() {//returns (and removes) the first item in items
-		return itemOptions.remove(0);
+		Item nextItem = items.get(0);
+		if (PERSISTENT_CHOICES) {
+			items.remove(nextItem);
+		}
+		itemOptions.remove(nextItem);
+		resetOptions();
+		return nextItem;
 	}
 
-	public void resetList() {
+	public void resetOptions() {
+		itemOptions.clear();
+		for (Item item:items) {
+			this.itemOptions.add(item);
+		}
+		shuffleLists();
+	}
+
+	private void resetList() {
 		items.clear();
 		itemOptions.clear();
 		for (Item item:Items.getItems()) {
 			this.items.add(item);
 			this.itemOptions.add(item);
 		}
+		shuffleLists();
+	}
+
+	private void shuffleLists() {
 		int seed = new Random().nextInt();
 		Collections.shuffle(this.items, new Random(seed));
 		Collections.shuffle(this.itemOptions, new Random(seed));
