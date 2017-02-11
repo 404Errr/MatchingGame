@@ -20,7 +20,9 @@ public class Renderer extends JPanel {
 	}
 
 	private void drawCurrentImage(Graphics2D g2) {
-		BufferedImage image = Data.getItems().get(2).picture;
-		g.drawImage(image, 10, 10, Data.IMAGE_SIZE*(image.getWidth()/image.getHeight()), Data.IMAGE_SIZE, null);
+		if (Game.getCurrentItemSet()!=null&&Game.getCurrentItemSet().getActiveItem()!=null) {//null check
+			BufferedImage image = Game.getCurrentItemSet().getActiveItem().picture;
+			g.drawImage(image, 10, 10, Data.IMAGE_SIZE*(image.getWidth()/image.getHeight()), Data.IMAGE_SIZE, null);
+		}
 	}
 }

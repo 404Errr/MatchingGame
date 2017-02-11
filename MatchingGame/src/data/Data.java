@@ -14,8 +14,7 @@ public class Data {
 
 	public static final int IMAGE_SIZE = 400;
 
-
-
+	public static final int CHOICE_COUNT = 4;
 
 	public static ArrayList<Item> getItems() {
 		ArrayList<Item> items = new ArrayList<>();

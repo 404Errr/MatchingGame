@@ -1,11 +1,6 @@
 package main;
 
 public class UpdateLoop implements Runnable {
-	private static double speedFactor = 1;
-
-	static void setSpeedFactor(double speedFactor) {
-		UpdateLoop.speedFactor = speedFactor;
-	}
 
 	@Override
 	public void run() {
@@ -15,20 +10,14 @@ public class UpdateLoop implements Runnable {
 		while (Main.RUNNING) {
 			startTime = System.nanoTime();
 
-			update();
-			Window.renderer.repaint();
+			update();//update
+			Window.renderer.repaint();//refresh the screen
 
-			wait = (long)(((updateSpeed/speedFactor)-(System.nanoTime()-startTime))/1000000);
+			wait = (updateSpeed-(System.nanoTime()-startTime))/1000000;
 			try {
-				if (wait>0) {
-					Thread.sleep(wait);
-				}
-				else {
-					System.out.println("LAGGING "+wait);
-				}
+				if (wait>0) Thread.sleep(wait);
 			}
 			catch (Exception e) {
-				System.out.println("-UPDATE LOOP ERROR");
 				e.printStackTrace();
 			}
 		}
@@ -36,7 +25,7 @@ public class UpdateLoop implements Runnable {
 
 	private void update() {
 		try {
-			
+
 		}
 		catch (Exception e) {
 			System.out.println("-UPDATE ERROR");

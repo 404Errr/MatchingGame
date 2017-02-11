@@ -18,7 +18,4 @@ public class Item {
 	public String getName() {
 		return name;
 	}
-
-	//get name
-	//get image
 }

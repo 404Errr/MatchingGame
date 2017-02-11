@@ -1,7 +1,6 @@
 package main;
 
 import java.awt.GridLayout;
-import java.awt.geom.Rectangle2D;
 
 import javax.swing.JFrame;
 
@@ -10,7 +9,6 @@ public class Window extends JFrame {
 	private static JFrame frame;
 	private static UserInput input;
 	static Renderer renderer;
-	static Rectangle2D bounds;
 
 	static void init() {
 		renderer = new Renderer();
@@ -18,8 +16,8 @@ public class Window extends JFrame {
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		frame.setLayout(new GridLayout());
-		frame.setSize(Main.WINDOW_WIDTH, Main.WINDOW_HEIGHT);
-		frame.setTitle(Main.WINDOW_WIDTH+"x"+Main.WINDOW_HEIGHT);
+		frame.setSize(Main.getWINDOW_WIDTH(), Main.getWINDOW_HEIGHT());
+		frame.setTitle(Main.getWINDOW_WIDTH()+"x"+Main.getWINDOW_HEIGHT());
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.addKeyListener(input);

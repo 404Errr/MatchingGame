@@ -2,10 +2,17 @@ package main;
 
 import java.util.ArrayList;
 
+import data.Data;
+
 public class Items {
-	static ArrayList<Item> items = new ArrayList<>();
+	private static ArrayList<Item> items = new ArrayList<>();
 
 	public static void init() {
+		System.out.println("Init items");
+		items = Data.getItems();
+	}
 
+	public static ArrayList<Item> getItems() {
+		return items;
 	}
 }
