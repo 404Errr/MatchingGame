@@ -25,14 +25,14 @@ public class Renderer extends JPanel {
 		if (Game.getCurrentItemSet()!=null) {
 			g.setFont(new Font("Helvetica", Font.BOLD, 20));
 			for (int i = 0;i<Game.getCurrentItemSet().getChoices().size();i++) {
-				g.drawString(Game.getCurrentItemSet().getChoices().get(i).name, 10, Data.IMAGE_SIZE+30+(20*i));//FIXME
+				g.drawString(Game.getCurrentItemSet().getChoices().get(i).getName(), 10, Data.IMAGE_SIZE+30+(20*i));//FIXME
 			}
 		}
 	}
 
 	private void drawCurrentImage() {
 		if (Game.getCurrentItemSet()!=null&&Game.getCurrentItemSet().getActiveItem()!=null) {//null check
-			BufferedImage image = Game.getCurrentItemSet().getActiveItem().picture;
+			BufferedImage image = Game.getCurrentItemSet().getActiveItem().getPicture();
 			g.drawImage(image, 10, 10, Data.IMAGE_SIZE*(image.getWidth()/image.getHeight()), Data.IMAGE_SIZE, null);
 		}
 	}

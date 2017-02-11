@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 import javax.imageio.ImageIO;
 
-import main.Item;
+import item.Item;
 
 public class Data {
 	private static final String picturePath = "src/data/pictures/", pictureExt = ".png";

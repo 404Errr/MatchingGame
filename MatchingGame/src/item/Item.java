@@ -1,10 +1,10 @@
-package main;
+package item;
 
 import java.awt.image.BufferedImage;
 
 public class Item {
-	BufferedImage picture;
-	String name;
+	private BufferedImage picture;
+	private String name;
 
 	public Item(BufferedImage picture, String name) {
 		this.picture = picture;

@@ -4,6 +4,8 @@ import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 
+import user.input.UserInput;
+
 @SuppressWarnings("serial")
 public class Window extends JFrame {
 	private static JFrame frame;

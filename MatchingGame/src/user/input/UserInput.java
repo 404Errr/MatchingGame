@@ -1,4 +1,4 @@
-package main;
+package user.input;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -7,6 +7,8 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
+
+import user.Cursor;
 
 public class UserInput implements KeyListener, MouseMotionListener, MouseListener, MouseWheelListener {
 	@Override

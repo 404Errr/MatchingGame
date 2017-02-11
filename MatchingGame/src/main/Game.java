@@ -1,5 +1,9 @@
 package main;
 
+import item.ItemList;
+import item.ItemSet;
+import item.Items;
+
 public class Game {
 	private static ItemList itemList;
 	private static ItemSet currentItemSet;
