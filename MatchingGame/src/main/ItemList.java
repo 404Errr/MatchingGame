@@ -29,8 +29,4 @@ public class ItemList {
 		return items.get(new Random().nextInt(items.size()));
 	}
 
-//	public Item getRandomItem() {//returns a random item from items and removes it from the list
-//		return items.remove(new Random().nextInt(items.size()));
-//	}
-
 }
