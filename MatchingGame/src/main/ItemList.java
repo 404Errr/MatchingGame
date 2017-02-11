@@ -25,6 +25,7 @@ public class ItemList {
 	}
 
 	public Item getRandomItem() {//returns a random item from items
+		//FIXME duplicates
 		return items.get(new Random().nextInt(items.size()));
 	}
 
