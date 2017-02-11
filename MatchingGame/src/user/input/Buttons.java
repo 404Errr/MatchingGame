@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import data.Data;
 
-public class Buttons {
+public class Buttons implements Data {
 	private static ArrayList<Button> buttons = new ArrayList<>();
 
 	public static ArrayList<Button> getButtons() {
@@ -12,7 +12,7 @@ public class Buttons {
 	}
 
 	public static void init() {
-		for (int i = 0;i<Data.CHOICE_COUNT;i++) {
+		for (int i = 0;i<CHOICE_COUNT;i++) {
 			buttons.add(new Button(i));
 		}
 	}
