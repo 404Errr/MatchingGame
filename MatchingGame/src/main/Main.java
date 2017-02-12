@@ -10,7 +10,7 @@ public class Main {
 	private static int SCREEN_HEIGHT, SCREEN_WIDTH, WINDOW_HEIGHT, WINDOW_WIDTH;
 
 	public static final int UPS = 60;
-	public final static boolean RUNNING = true;
+	public static boolean RUNNING = true;
 
 	private static UpdateLoop updateLoop;
 

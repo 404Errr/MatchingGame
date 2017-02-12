@@ -27,10 +27,6 @@ public class Game {
 		currentItemSet = new ItemSet(itemList);
 	}
 
-	public static ItemList getItemList() {
-		return itemList;
-	}
-
 	public static ItemSet getCurrentItemSet() {
 		return currentItemSet;
 	}

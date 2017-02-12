@@ -18,20 +18,17 @@ public class ItemList implements Data {
 		return items;
 	}
 
-	public Item getNextItem() {//returns (and removes) the first item in items
-		Item nextItem = items.get(0);
-		if (PERSISTENT_CHOICES) {
-			items.remove(nextItem);
-		}
-		itemOptions.remove(nextItem);
-		resetOptions();
-		return nextItem;
-	}
-
 	public void resetOptions() {
 		itemOptions.clear();
-		for (Item item:items) {
-			this.itemOptions.add(item);
+		if (!REPEATING_CHOICES) {
+			for (Item item:items) {
+				this.itemOptions.add(item);
+			}
+		}
+		else {
+			for (Item item:Items.getItems()) {
+				this.itemOptions.add(item);
+			}
 		}
 		shuffleLists();
 	}
@@ -50,6 +47,15 @@ public class ItemList implements Data {
 		int seed = new Random().nextInt();
 		Collections.shuffle(this.items, new Random(seed));
 		Collections.shuffle(this.itemOptions, new Random(seed));
+	}
+
+	public Item getNextItem() {//returns (and removes) the first item in items
+		Item nextItem = items.get(0);
+		if (!REPEATING_CHOICES) {
+			items.remove(nextItem);
+		}
+		itemOptions.remove(nextItem);
+		return nextItem;
 	}
 
 	public Item getRandomItem() {//returns a random item from items
