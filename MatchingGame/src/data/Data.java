@@ -9,7 +9,7 @@ public interface Data {
 	public static final Color COLOR_UI_BUTTON_HOVERED = new Color(100,100,255,255);
 
 	public static final int CHOICE_COUNT = 6;
-	public static final boolean SHOW_CORRECT = false, REPEATING_CHOICES = true;
+	public static final boolean SHOW_CORRECT = false, REPEATING_SETS = true;
 
 	public static final int REWARD_CORRECT = 1, REWARD_INCORRECT = -1;
 

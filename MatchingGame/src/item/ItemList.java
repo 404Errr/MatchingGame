@@ -20,15 +20,10 @@ public class ItemList implements Data {
 
 	public void resetOptions() {
 		itemOptions.clear();
-		if (!REPEATING_CHOICES) {
-			for (Item item:items) {
-				this.itemOptions.add(item);
-			}
-		}
-		else {
-			for (Item item:Items.getItems()) {
-				this.itemOptions.add(item);
-			}
+		ArrayList<Item> list = Items.getItems();
+		if (!REPEATING_SETS) list = items;
+		for (Item item:list) {
+			this.itemOptions.add(item);
 		}
 		shuffleLists();
 	}
@@ -51,7 +46,7 @@ public class ItemList implements Data {
 
 	public Item getNextItem() {//returns (and removes) the first item in items
 		Item nextItem = items.get(0);
-		if (!REPEATING_CHOICES) {
+		if (!REPEATING_SETS) {
 			items.remove(nextItem);
 		}
 		itemOptions.remove(nextItem);
