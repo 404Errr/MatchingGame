@@ -2,6 +2,7 @@ package item;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 import data.Data;
@@ -9,9 +10,9 @@ import data.Data;
 public class ItemList implements Data {
 	private ArrayList<Item> items = new ArrayList<>(), itemOptions = new ArrayList<>();
 
-	public ItemList(ArrayList<Item> items) {
+	public ItemList(List<Item> list) {
 		resetList();
-		System.out.println("New item list: "+this.items);
+		System.out.println("New item list: "+list);
 	}
 
 	public ArrayList<Item> getItems() {
@@ -20,10 +21,10 @@ public class ItemList implements Data {
 
 	public void resetOptions() {
 		itemOptions.clear();
-		ArrayList<Item> list = Items.getItems();
+		List<Item> list = Items.getItems();
 		if (!REPEATING_SETS) list = items;
 		for (Item item:list) {
-			this.itemOptions.add(item);
+			itemOptions.add(item);
 		}
 		shuffleLists();
 	}
@@ -32,28 +33,26 @@ public class ItemList implements Data {
 		items.clear();
 		itemOptions.clear();
 		for (Item item:Items.getItems()) {
-			this.items.add(item);
-			this.itemOptions.add(item);
+			items.add(item);
+			itemOptions.add(item);
 		}
 		shuffleLists();
 	}
 
 	private void shuffleLists() {
 		int seed = new Random().nextInt();
-		Collections.shuffle(this.items, new Random(seed));
-		Collections.shuffle(this.itemOptions, new Random(seed));
+		Collections.shuffle(items, new Random(seed));
+		Collections.shuffle(itemOptions, new Random(seed));
 	}
 
-	public Item getNextItem() {//returns (and removes) the first item in items
+	public Item getNextItem() {
 		Item nextItem = items.get(0);
-		if (!REPEATING_SETS) {
-			items.remove(nextItem);
-		}
+		if (!REPEATING_SETS) items.remove(nextItem);
 		itemOptions.remove(nextItem);
 		return nextItem;
 	}
 
-	public Item getRandomItem() {//returns a random item from items
+	public Item getRandomItem() {
 		Item item = itemOptions.get(new Random().nextInt(itemOptions.size()));
 		itemOptions.remove(item);
 		return item;

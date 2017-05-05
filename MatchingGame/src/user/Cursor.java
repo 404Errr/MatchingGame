@@ -3,6 +3,9 @@ package user;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+import javax.swing.SwingUtilities;
+
+import main.Window;
 import user.input.Button;
 import user.input.Buttons;
 
@@ -18,8 +21,9 @@ public class Cursor {
 	}
 
 	public static void updateMouse(MouseEvent e) {
-		x = e.getX()-3;//offset 3
-		y = e.getY()-25;//offset 25
+		e = SwingUtilities.convertMouseEvent(Window.getFrame(), e, Window.getRenderer());
+		x = e.getX();
+		y = e.getY();
 	}
 
 	public static int getX() {

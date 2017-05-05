@@ -18,9 +18,10 @@ public class Window extends JFrame {
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		frame.setLayout(new GridLayout());
-		frame.setSize(Main.getWINDOW_WIDTH(), Main.getWINDOW_HEIGHT());
-		frame.setTitle(Main.getWINDOW_WIDTH()+"x"+Main.getWINDOW_HEIGHT());
-		frame.setResizable(false);
+		frame.setExtendedState(MAXIMIZED_BOTH);
+//		frame.setSize(Main.getWINDOW_WIDTH(), Main.getWINDOW_HEIGHT());
+//		frame.setTitle(Main.getWINDOW_WIDTH()+"x"+Main.getWINDOW_HEIGHT());
+		frame.setTitle("Blah");
 		frame.setLocationRelativeTo(null);
 		frame.addKeyListener(input);
 		frame.addMouseMotionListener(input);
@@ -29,4 +30,12 @@ public class Window extends JFrame {
 		frame.add(renderer);
 		frame.setVisible(true);
 	}
+
+	public static JFrame getFrame() {
+		return frame;
+	}
+
+	public static Renderer getRenderer() {
+		return renderer;
+	}	
 }
